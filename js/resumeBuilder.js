@@ -70,28 +70,35 @@ var places = {
 };
 
 bio.display = function() {
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
-var formattedWelcomeMessage = HTMLwelcomeMessage.replace("%data%", bio.welcomeMessage);
-var formattedContactInfo = [];
-formattedContactInfo.push(HTMLmobile.replace("%data%", bio.contacts.mobile));
-formattedContactInfo.push(HTMLemail.replace("%data%", bio.contacts.email));
-formattedContactInfo.push(HTMLgithub.replace("%data%", bio.contacts.github));
-formattedContactInfo.push(HTMLlocation.replace("%data%", bio.contacts.location));
+    var formattedName = HTMLheaderName.replace("%data%", bio.name);
+    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+    var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
+    var formattedWelcomeMessage = HTMLwelcomeMessage.replace("%data%", bio.welcomeMessage);
+    var formattedContactInfo = [];
+    formattedContactInfo.push(HTMLmobile.replace("%data%", bio.contacts.mobile));
+    formattedContactInfo.push(HTMLemail.replace("%data%", bio.contacts.email));
+    formattedContactInfo.push(HTMLgithub.replace("%data%", bio.contacts.github));
+    formattedContactInfo.push(HTMLlocation.replace("%data%", bio.contacts.location));
 
-if (formattedContactInfo.length > 0) {
-  for (var i = 0; i < formattedContactInfo.length; i++) {
-    $("#topContacts").append(formattedContactInfo[i]);
-    $("#footerContacts").append(formattedContactInfo[i]);
-  }
+    if (formattedContactInfo.length > 0) {
+        for (var i = 0; i < formattedContactInfo.length; i++) {
+            $("#topContacts").append(formattedContactInfo[i]);
+            $("#footerContacts").append(formattedContactInfo[i]);
+        }
 
-	$("#header").prepend(formattedRole);
-	$("#header").prepend(formattedName);
-	$("#header").append(formattedBioPic);
-	$("#header").append(formattedWelcomeMessage);
+    	$("#header").prepend(formattedRole);
+    	$("#header").prepend(formattedName);
+    	$("#header").append(formattedBioPic);
+    	$("#header").append(formattedWelcomeMessage);
 
-}
+        var str = "";
+
+        bio.skills.forEach(function(skill){
+            str += "<li>" + skill + "</li>";   
+        });
+        str = "<ul>" + str + "</ul>";
+        $("#header").append(str);
+    }
 }
 
 

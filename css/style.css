@@ -100,8 +100,7 @@ a {
 }
 
 #skills-h3 {
-  color: #f5ae23;
-  display: none;
+  color: #21BEDE;
 }
 
 .orange {
@@ -127,7 +126,6 @@ a {
   background-color: #4a4a4a;
 }
 
-/* TODO: Replace with image later */
 #header {
   background-color: #484848;
 }
@@ -154,11 +152,19 @@ a {
 
 ul {
   list-style-type: none;
+  padding: 10px;
+
+
+}
+
+li { 
+    padding-left: 16px; 
+    color: #21BEDE;
 }
 
 .biopic {
   float: left;
-  padding: 10px;
+  padding: 20px;
   width: 200px;
   display: none;
 }
